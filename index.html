@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Border Radius Previewer</title>
+</head>
+<body>
+
+    <header>
+        <h1>Border Radius Previewer</h1>
+    </header>
+    
+    <main class="container">
+        <div class="upper-row">
+            <input placeholder="Top Left" class="input-width" id="top-left" type="text" value="">
+            <input placeholder="Width" class="input-width btn-resizer" id="width-resizer" type="text" value="">
+            <input placeholder="Height" class="input-width btn-resizer" id="height-resizer" type="text" value="">
+            <input placeholder="Top Right" class="input-width" id="top-right" type="text" value="">
+        </div>
+        <div id="center" class="center"></div>
+        <div class="lower-row">
+            <input placeholder="Bot Left" class="input-width" id="bottom-left" type="text" value="">
+            <input onclick="apply()" class="btn" type="submit" value="Apply">
+            <input onclick="reset()" class="btn" type="submit" value="Reset">
+            <input onclick="random()" class="btn" type="submit" value="Random">
+            <input placeholder="Bot Right" class="input-width" id="bottom-right" type="text" value="">
+        </div>
+    </main>
+
+    <section class="hint">
+        <h1>Hints:</h1>
+        <ul>
+            <li>Minimum border-radius value = 0%</li>
+            <li>Maximum border-radius value = 100%</li>
+            <li>Minimum width value = 0px</li>
+            <li>Maximum width value = 480px</li>
+            <li>Minimum height value = 0px</li>
+            <li>Maximum height value = 240px</li>
+        </ul>
+    </section>
+
+    <section class="write" id="border-write">
+        <pre>{</pre>
+        <pre>   width: <span id="width-span">480px;</span></pre>
+        <pre>   height: <span id="height-span">240px;</span></pre>
+        <pre>   border-top-left-radius: <span id="top-left-span">0%;</span></pre>
+        <pre>   border-top-right-radius: <span id="top-right-span">0%;</span></pre>
+        <pre>   border-bottom-left-radius: <span id="bottom-left-span">0%;</span></pre>
+        <pre>   border-bottom-right-radius: <span id="bottom-right-span">0%;</span></pre>
+        <pre>}</pre>
+    </section>
+
+</body>
+</html>

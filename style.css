@@ -1,0 +1,138 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(135deg, RGB(75, 41, 140), RGB(173, 35, 67));
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 50px;
+    margin: 12px;
+}
+
+.hint {
+    margin: 10px auto;
+    width: 320px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.hint h1 {
+    text-align: center;
+}
+
+.hint li {
+    text-align: left;
+    list-style-position: inside;
+    margin: 5px 0px;
+}
+
+.container {
+    position: relative;
+    margin: 50px auto;
+    width: 700px;
+    height: 480px;
+}
+
+.input-width {
+    width: 100px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    font-size: 20px;
+}
+
+.upper-row {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.lower-row {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+#top-left {
+    position: absolute;
+    left: 0px;
+}
+
+#top-right {
+    position: absolute;
+    right: 0px;
+}
+
+#bottom-left {
+    position: absolute;
+    left: 0px;
+}
+
+#bottom-right {
+    position: absolute;
+    right: 0px;
+}
+
+.btn-resizer {
+    margin: 0px 25px;
+}
+
+.center {
+    margin: 10px auto;
+    width: 480px;
+    height: 240px;
+    border: 2px solid white;
+    background-color: black;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    margin: 0px 25px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.write {
+    margin: 10px auto;
+    width: 500px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.write pre {
+    font-size: 20px;
+    color: white;
+}
