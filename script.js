@@ -1,174 +1,197 @@
-const center = document.getElementById("center");
+const box = document.getElementById("box");
+const boxWidth = document.getElementById("boxWidth");
+const boxHeight = document.getElementById("boxHeight");
+const topLeft = document.getElementById("topLeft");
+const topRight = document.getElementById("topRight");
+const botLeft = document.getElementById("botLeft");
+const botRight = document.getElementById("botRight");
+const widthSpan = document.getElementById("widthSpan");
+const heightSpan = document.getElementById("heightSpan");
+const topLeftSpan = document.getElementById("topLeftSpan");
+const topRightSpan = document.getElementById("topRightSpan");
+const botLeftSpan = document.getElementById("botLeftSpan");
+const botRightSpan = document.getElementById("botRightSpan");
+const resetButton = document.getElementById("reset");
+const randomButton = document.getElementById("random");
+const copyButton = document.getElementById("copyButton");
+const inputIn = document.getElementById("writeIn");
 
-function topLeft() {
+function changeTopLeft() {
+
+    let x = this.value;
     
-    let tLeft = document.getElementById("top-left").value;
+    if(x > 100 || x < 0) {
+        alert(`Invalid number, only values between 0% and 100% are valid`)
+    } else {
+        
+        box.style.borderTopLeftRadius = x+"%";
+        
+        topLeftSpan.innerHTML = x+"%";
+        
+        inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
+
+    }
+
+}
+
+function changeTopRight() {
+
+    let x = this.value;
+
+    if(x > 100 || x < 0) {
+        alert(`Invalid number, only values between 0% and 100% are valid`)
+    } else {
+
+        box.style.borderTopRightRadius = x+"%";
+
+        topRightSpan.innerHTML = x+"%";
+        
+        inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
     
-    if(tLeft >= 0 && tLeft <= 100 && tLeft != "") {
-        center.style.borderTopLeftRadius = tLeft + "%";
-        document.getElementById("top-left-span").innerText = tLeft + "%;";
-    } else if(tLeft == ""){
-        center.style.borderTopLeftRadius = 0 + "%";
-        document.getElementById("top-left-span").innerText = 0 + "%;";
-    } else {
-        alert("Invalid value, put a number between 0 and 100 for a valid value to the border percentage");
     }
 
 }
 
-function topRight() {
+function changeBotLeft() {
 
-    let tRight = document.getElementById("top-right").value;
+    let x = this.value;
 
-    if(tRight >= 0 && tRight <= 100 && tRight != "") {
-        center.style.borderTopRightRadius = tRight + "%";
-        document.getElementById("top-right-span").innerText = tRight + "%;";
-    } else if(tRight == ""){
-        center.style.borderTopRightRadius = 0 + "%";
-        document.getElementById("top-right-span").innerText = 0 + "%;";
+    if(x > 100 || x < 0) {
+        alert(`Invalid number, only values between 0% and 100% are valid`)
     } else {
-        alert("Invalid value, put a number between 0 and 100 for a valid value to the border percentage");
-    }
 
+        box.style.borderBottomLeftRadius = x+"%";
 
-}
-
-function bottomLeft() {
-
-    let lBottom = document.getElementById("bottom-left").value;
-
-    if(lBottom >= 0 && lBottom <= 100 && lBottom != "") {
-        center.style.borderBottomLeftRadius = lBottom + "%";
-        document.getElementById("bottom-left-span").innerText = lBottom + "%;";
-    } else if(lBottom == ""){
-        center.style.borderBottomLeftRadius = 0 + "%";
-        document.getElementById("bottom-left-span").innerText = 0 + "%;";
-    } else {
-        alert("Invalid value, put a number between 0 and 100 for a valid value to the border percentage");
+        botLeftSpan.innerHTML = x+"%";
+        
+        inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
+    
     }
 
 }
 
-function bottomRight() {
+function changeBotRight() {
 
-    let bRight = document.getElementById("bottom-right").value;
+    let x = this.value;
 
-    if(bRight >= 0 && bRight <= 100 && bRight != "") {
-        center.style.borderBottomRightRadius = lBottom + "%";
-        document.getElementById("bottom-right-span").innerText = bRight + "%;";
-    } else if(bRight == ""){
-        center.style.borderBottomRightRadius = 0 + "%";
-        document.getElementById("bottom-right-span").innerText = 0 + "%;";
+    if(x > 100 || x < 0) {
+        alert(`Invalid number, only values between 0% and 100% are valid`)
     } else {
-        alert("Invalid value, put a number between 0 and 100 for a valid value to the border percentage");
+
+        box.style.borderBottomRightRadius = x+"%";
+
+        botRightSpan.innerHTML = x+"%";
+        
+        inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
+    
     }
 
 }
 
-function widthResize() {
+function changeWidth() {
 
-    let newWidthSize = document.getElementById("width-resizer").value;
+    let x = this.value;
 
-    if(newWidthSize >= 0 && newWidthSize <= 480 && newWidthSize != "") {
-        center.style.width = newWidthSize + "px";
-        document.getElementById("width-span").innerText = newWidthSize + "px;";
-    } else if(newWidthSize == "") {
-        center.style.width = 480 + "px";
-        document.getElementById("width-span").innerText = 480 + "px;";
+    if(x > 480 || x < 0) {
+        alert(`Invalid number, only values between 0px and 480px are valid`)
     } else {
-        alert("Invalid value, put a number between 0 and 480 for a valid value to the width you want")
+
+        box.style.width = x+"px";
+
+        widthSpan.innerHTML = x+"px";
+    
+        inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
+    
     }
 
 }
 
-function heightResize() {
+function changeHeight() {
 
-    let newHeightSize = document.getElementById("height-resizer").value;
+    let x = this.value;
 
-    if(newHeightSize >= 0 && newHeightSize <= 240 && newHeightSize != "") {
-        center.style.height = newHeightSize + "px";
-        document.getElementById("height-span").innerText = newHeightSize + "px;";
-    } else if(newHeightSize == "") {
-        center.style.height = 240 + "px";
-        document.getElementById("height-span").innerText = 240 + "px;";
-    } else { 
-        alert("Invalid value, put a number between 0 and 240 for a valid value to the width you want");
+    if(x > 240 || x < 0) {
+        alert(`Invalid number, only values between 0px and 240px are valid`)
+    } else {
+
+        box.style.height = x+"px";
+    
+        heightSpan.innerHTML = x+"px";
+        
+        inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
+    
     }
 
 }
 
 function reset() {
-    
-    center.style.borderRadius = 0 + "px";
-    center.style.width = 480 + "px";
-    center.style.height = 240 + "px";
 
-    document.getElementById("top-left").value = "";
-    document.getElementById("top-right").value = "";
-    document.getElementById("bottom-left").value = "";
-    document.getElementById("bottom-right").value = "";
-    document.getElementById("width-resizer").value = "";
-    document.getElementById("height-resizer").value = "";
+    box.style.width = "480px";
+    box.style.height = "240px";
+    box.style.borderRadius = "0%";
+    widthSpan.innerHTML = "480px";
+    heightSpan.innerHTML = "240px";
+    topLeftSpan.innerHTML = "0%";
+    topRightSpan.innerHTML = "0%";
+    botLeftSpan.innerHTML = "0%";
+    botRightSpan.innerHTML = "0%";
 
-    document.getElementById("width-span").innerText = "";
-    document.getElementById("height-span").innerText = "";
-    document.getElementById("top-left-span").innerText = "";
-    document.getElementById("top-right-span").innerText = "";
-    document.getElementById("bottom-left-span").innerText = "";
-    document.getElementById("bottom-right-span").innerText = "";
+    topLeft.value = parseInt(box.style.borderTopLeftRadius);
+    topRight.value = parseInt(box.style.borderTopRightRadius);
+    botLeft.value = parseInt(box.style.borderBottomLeftRadius);
+    botRight.value = parseInt(box.style.borderBottomRightRadius);
+    boxHeight.value = parseInt(box.style.height);
+    boxWidth.value = parseInt(box.style.width);
 
-}
-
-function borderRandom(min, max) {
-
-    min = Math.ceil(min);
-    max = Math.floor(max);
-
-    center.style.borderTopLeftRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
-    center.style.borderTopRightRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
-    center.style.borderBottomLeftRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
-    center.style.borderBottomRightRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
-
-    document.getElementById("top-left-span").innerText = center.style.borderTopLeftRadius;
-    document.getElementById("top-right-span").innerText = center.style.borderTopRightRadius;
-    document.getElementById("bottom-left-span").innerText = center.style.borderBottomLeftRadius;
-    document.getElementById("bottom-right-span").innerText = center.style.borderBottomRightRadius;
+    inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
 
 }
 
-function widthRandom(min, max) {
+function randomize() {
 
-    min = Math.ceil(min);
-    max = Math.floor(max);
+    let min = 0;
+    let max = 100;
+    let maxWidth = 480;
 
-    center.style.width = Math.floor(Math.random() * (max - min + 1)) + min + "px";
+    box.style.borderTopLeftRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
+    box.style.borderTopRightRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
+    box.style.borderBottomLeftRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
+    box.style.borderBottomRightRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
+    box.style.height = Math.floor(Math.random() * (maxWidth - min + 1)) + min + "px";
+    box.style.width = Math.floor(Math.random() * (maxWidth - min + 1)) + min + "px";
 
-    document.getElementById("width-span").innerText = center.style.width;
+    topLeft.value = parseInt(box.style.borderTopLeftRadius);
+    topRight.value = parseInt(box.style.borderTopRightRadius);
+    botLeft.value = parseInt(box.style.borderBottomLeftRadius);
+    botRight.value = parseInt(box.style.borderBottomRightRadius);
+    boxHeight.value = parseInt(box.style.height);
+    boxWidth.value = parseInt(box.style.width);
+
+    topLeftSpan.innerHTML = box.style.borderTopLeftRadius;
+    topRightSpan.innerHTML = box.style.borderTopRightRadius;
+    botLeftSpan.innerHTML = box.style.borderBottomLeftRadius;
+    botRightSpan.innerHTML = box.style.borderBottomRightRadius;
+    heightSpan.innerHTML = box.style.height;
+    widthSpan.innerHTML = box.style.width;
+
+    inputIn.value = `{width: ${widthSpan.innerHTML}; height: ${heightSpan.innerHTML}; border-top-left-radius: ${topLeftSpan.innerHTML}; border-top-right-radius: ${topRightSpan.innerHTML}; border-bottom-left-radius: ${botLeftSpan.innerHTML}; border-bottom-right-radius: ${botRightSpan.innerHTML};}`
 
 }
 
-function heightRandom(min, max) {
+function copyToClipboard() {
 
-    min = Math.ceil(min);
-    max = Math.floor(max);
-
-    center.style.height = Math.floor(Math.random() * (max - min + 1)) + min + "px";
-
-    document.getElementById("height-span").innerText = center.style.height;
+    inputIn.select()
+    document.execCommand("Copy")
 
 }
 
-function apply() {
-    topLeft();
-    topRight();
-    bottomLeft();
-    bottomRight();
-    widthResize();
-    heightResize();
-}
+topLeft.addEventListener('change', changeTopLeft)
+topRight.addEventListener('change', changeTopRight)
+botLeft.addEventListener('change', changeBotLeft)
+botRight.addEventListener('change', changeBotRight)
+boxWidth.addEventListener('change', changeWidth)
+boxHeight.addEventListener('change', changeHeight)
+resetButton.addEventListener('click', reset)
+randomButton.addEventListener('click', randomize)
+copyButton.addEventListener('click', copyToClipboard)
 
-function random() {
-    borderRandom(0, 100);
-    widthRandom(0, 480);
-    heightRandom(0, 240);
-}

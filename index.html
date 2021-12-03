@@ -3,35 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <script src="script.js" defer></script>
-    <title>Border Radius Previewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <title>CSS Border Radius</title>
 </head>
 <body>
 
-    <header>
-        <h1>Border Radius Previewer</h1>
+    <header class="header">
+        <h1>CSS Border-Radius Previewer</h1>
     </header>
-    
-    <main class="container">
-        <div class="upper-row">
-            <input placeholder="Top Left" class="input-width" id="top-left" type="text" value="">
-            <input placeholder="Width" class="input-width btn-resizer" id="width-resizer" type="text" value="">
-            <input placeholder="Height" class="input-width btn-resizer" id="height-resizer" type="text" value="">
-            <input placeholder="Top Right" class="input-width" id="top-right" type="text" value="">
-        </div>
-        <div id="center" class="center"></div>
-        <div class="lower-row">
-            <input placeholder="Bot Left" class="input-width" id="bottom-left" type="text" value="">
-            <input onclick="apply()" class="btn" type="submit" value="Apply">
-            <input onclick="reset()" class="btn" type="submit" value="Reset">
-            <input onclick="random()" class="btn" type="submit" value="Random">
-            <input placeholder="Bot Right" class="input-width" id="bottom-right" type="text" value="">
-        </div>
+
+    <main class="content">
+        <section>
+            
+            <div class="top-row">
+                <input type="number" id="topLeft" min="0" max="100" value="0">     
+                <label for="topLeft"></label>
+                
+                <input type="number" id="boxWidth" min="0" max="480" value="480">     
+                <label for="boxWidth"></label>
+
+                <input type="number" id="boxHeight" min="0" max="480" value="240">     
+                <label for="boxHeight"></label>
+                
+                <input type="number" id="topRight" min="0" max="100" value="0">     
+                <label for="topRight"></label>
+            </div>
+            
+            <div id="box"></div>
+
+            <div class="bottom-row">
+                <input type="number" id="botLeft" min="0" max="100" value="0">     
+                <label for="botLeft"></label>
+                
+                <input class="btn" type="submit" id="random" value="Random">
+                <input class="btn" type="submit" id="reset" value="Reset">
+                
+                <input type="number" id="botRight" min="0" max="100" value="0">     
+                <label for="botRight"></label>
+            </div>
+        </section>
+
     </main>
 
-    <section class="hint">
+    <article class="hint">
+        
         <h1>Hints:</h1>
         <ul>
             <li>Minimum border-radius value = 0%</li>
@@ -41,18 +60,24 @@
             <li>Minimum height value = 0px</li>
             <li>Maximum height value = 240px</li>
         </ul>
-    </section>
 
-    <section class="write" id="border-write">
+    </article>
+
+    <article class="write" id="borderWrite">
         <pre>{</pre>
-        <pre>   width: <span id="width-span">480px;</span></pre>
-        <pre>   height: <span id="height-span">240px;</span></pre>
-        <pre>   border-top-left-radius: <span id="top-left-span">0%;</span></pre>
-        <pre>   border-top-right-radius: <span id="top-right-span">0%;</span></pre>
-        <pre>   border-bottom-left-radius: <span id="bottom-left-span">0%;</span></pre>
-        <pre>   border-bottom-right-radius: <span id="bottom-right-span">0%;</span></pre>
+        <pre>    width: <span id="widthSpan">480px</span>;</pre>
+        <pre>    height: <span id="heightSpan">240px</span>;</pre>
+        <pre>    border-top-left-radius: <span id="topLeftSpan">0%</span>;</pre>
+        <pre>    border-top-right-radius: <span id="topRightSpan">0%</span>;</pre>
+        <pre>    border-bottom-left-radius: <span id="botLeftSpan">0%</span>;</pre>
+        <pre>    border-bottom-right-radius: <span id="botRightSpan">0%</span>;</pre>
         <pre>}</pre>
-    </section>
+        <div class="copy-div">
+            <input type="text" id="writeIn" value="{width: 480px; height: 240px; border-top-left-radius: 0%; border-top-right-radius: 0%; border-bottom-left-radius: 0%; border-bottom-right-radius: 0%">
+            <input type="submit" id="copyButton" class="btn" value="Copy" >
+        </div>
+    </article>
 
+    <script src="script.js"></script>
 </body>
 </html>
