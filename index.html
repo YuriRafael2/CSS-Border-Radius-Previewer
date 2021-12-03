@@ -5,38 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Border-Radius</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <title>CSS Border Radius</title>
 </head>
 <body>
 
-    <main>
-        <div class="left-range">
-            <input id="leftBot" value ="0" type="range" min="0" max="100">
-            <input id="leftTop" value ="0" type="range" min="0" max="100">
-        </div>
+    <header class="header">
+        <h1>CSS Border-Radius Previewer</h1>
+    </header>
 
-        
-        <div id="box"></div>
+    <main class="content">
+        <section>
+            
+            <div class="top-row">
+                <input type="number" id="topLeft" min="0" max="100" value="0">     
+                <label for="topLeft"></label>
+                
+                <input type="number" id="boxWidth" min="0" max="480" value="480">     
+                <label for="boxWidth"></label>
 
-        <div class="right-range">
-            <input id="rightBot" value ="0" type="range" min="0" max="100">
-            <input id="rightTop" value ="0" type="range" min="0" max="100">
-        </div>
+                <input type="number" id="boxHeight" min="0" max="480" value="240">     
+                <label for="boxHeight"></label>
+                
+                <input type="number" id="topRight" min="0" max="100" value="0">     
+                <label for="topRight"></label>
+            </div>
+            
+            <div id="box"></div>
 
-        <div class="top-range">
-            <input id="topLeft" value ="0" type="range" min="0" max="100">
-            <input id="topRight" value ="0" type="range" min="0" max="100">
-        </div>
-        
-        <div class="bottom-range">
-            <input id="botLeft" value ="0" type="range" min="0" max="100">
-            <input id="botright" value ="0" type="range" min="0" max="100">
-        </div>
-        
-        
+            <div class="bottom-row">
+                <input type="number" id="botLeft" min="0" max="100" value="0">     
+                <label for="botLeft"></label>
+                
+                <input class="btn" type="submit" id="random" value="Random">
+                <input class="btn" type="submit" id="reset" value="Reset">
+                
+                <input type="number" id="botRight" min="0" max="100" value="0">     
+                <label for="botRight"></label>
+            </div>
+        </section>
+
     </main>
 
+    <article class="hint">
+        
+        <h1>Hints:</h1>
+        <ul>
+            <li>Minimum border-radius value = 0%</li>
+            <li>Maximum border-radius value = 100%</li>
+            <li>Minimum width value = 0px</li>
+            <li>Maximum width value = 480px</li>
+            <li>Minimum height value = 0px</li>
+            <li>Maximum height value = 240px</li>
+        </ul>
+
+    </article>
+
+    <article class="write" id="borderWrite">
+        <pre>{</pre>
+        <pre>    width: <span id="widthSpan">480px</span>;</pre>
+        <pre>    height: <span id="heightSpan">240px</span>;</pre>
+        <pre>    border-top-left-radius: <span id="topLeftSpan">0%</span>;</pre>
+        <pre>    border-top-right-radius: <span id="topRightSpan">0%</span>;</pre>
+        <pre>    border-bottom-left-radius: <span id="botLeftSpan">0%</span>;</pre>
+        <pre>    border-bottom-right-radius: <span id="botRightSpan">0%</span>;</pre>
+        <pre>}</pre>
+        <div class="copy-div">
+            <input type="text" id="writeIn" value="{width: 480px; height: 240px; border-top-left-radius: 0%; border-top-right-radius: 0%; border-bottom-left-radius: 0%; border-bottom-right-radius: 0%">
+            <input type="submit" id="copyButton" class="btn" value="Copy" >
+        </div>
+    </article>
+
     <script src="script.js"></script>
-    
 </body>
 </html>
