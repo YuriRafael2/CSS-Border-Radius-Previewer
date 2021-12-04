@@ -92,8 +92,8 @@ function changeWidth() {
 
     let x = this.value;
 
-    if(x > 480 || x < 0) {
-        alert(`Invalid number, only values between 0px and 480px are valid`)
+    if(x > 360 || x < 0) {
+        alert(`Invalid number, only values between 0px and 360px are valid`)
     } else {
 
         box.style.width = x+"px";
@@ -126,10 +126,10 @@ function changeHeight() {
 
 function reset() {
 
-    box.style.width = "480px";
+    box.style.width = "360px";
     box.style.height = "240px";
     box.style.borderRadius = "0%";
-    widthSpan.innerHTML = "480px";
+    widthSpan.innerHTML = "360px";
     heightSpan.innerHTML = "240px";
     topLeftSpan.innerHTML = "0%";
     topRightSpan.innerHTML = "0%";
@@ -151,7 +151,7 @@ function randomize() {
 
     let min = 0;
     let max = 100;
-    let maxWidth = 480;
+    let maxWidth = 360;
 
     box.style.borderTopLeftRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
     box.style.borderTopRightRadius = Math.floor(Math.random() * (max - min + 1)) + min + "%";
