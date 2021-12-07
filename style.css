@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+#amzn_assoc_ad_div_adunit0_0 {
+    width:700px;margin:0px auto; display:flex; flex-wrap:nowrap;
+}
+
 html, body {
     height: 100%;
 }
