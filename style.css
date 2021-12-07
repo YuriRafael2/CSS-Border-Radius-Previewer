@@ -24,7 +24,8 @@ header h1 {
 .ads {
     width: 620px;
     heigh: 420px;
-    margin: 0px auto;
+    margin: 10px auto;
+    color: white;
 }
 
 .content {
