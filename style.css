@@ -21,7 +21,11 @@ header h1 {
     font-size: 40px;
 }
 
-#amzn_assoc_ad_div_adunit0_0 {width:600px; margin:0px 25%}
+.ads {
+    width: 620px;
+    heigh: 420px;
+    margin: 0px auto;
+}
 
 .content {
     display: flex;
