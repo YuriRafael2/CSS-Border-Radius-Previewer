@@ -21,12 +21,6 @@ header h1 {
     font-size: 40px;
 }
 
-.ads {
-    width: 620px;
-    margin: 10px auto;
-    color: white;
-}
-
 .content {
     display: flex;
     padding: 20px;
